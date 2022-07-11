@@ -43,9 +43,12 @@ const ProdDetails = () => {
   useEffect(() => {
     if (id) {
       const prod = async () => {
-        const nProd = await axios.get(`/api/v1/products/${id}`, {
-          headers: { Authorization: token },
-        });
+        const nProd = await axios.get(
+          `https://ecommerceapiiii.herokuapp.com/api/v1/products/${id}`,
+          {
+            headers: { Authorization: token },
+          }
+        );
         setSingleProd2(nProd.data.product);
       };
       prod();

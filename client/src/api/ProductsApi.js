@@ -10,7 +10,7 @@ const ProductsApi = () => {
   const [result, setResult] = useState(0);
 
   const { data, isLoading } = useFetch(
-    `/api/v1/products?limi=${
+    `https://ecommerceapiiii.herokuapp.com/api/v1/products?limi=${
       page * 9
     }&${categor}&${sort}&title[regex]=${search}`
   );

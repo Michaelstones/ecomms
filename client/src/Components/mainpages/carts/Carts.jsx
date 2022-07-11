@@ -15,7 +15,7 @@ const Carts = () => {
   const addToCart = async (cart) => {
     try {
       await axios.patch(
-        "/api/v1/addcart",
+        `https://ecommerceapiiii.herokuapp.com/api/v1/addcart`,
         { cart },
         {
           headers: { Authorization: toke },
@@ -78,7 +78,7 @@ const Carts = () => {
     const { paymentID, address } = payment;
     // console.log("hi1");
     await axios.post(
-      "/api/v1/payment",
+      `https://ecommerceapiiii.herokuapp.com/api/v1/payment`,
       { cart, paymentID, address },
       {
         headers: { Authorization: toke },

@@ -12,9 +12,12 @@ const UserApi = (token) => {
     if (token) {
       const getcurrUser = async () => {
         try {
-          const res = await axios.get("/api/v1/auth", {
-            headers: { Authorization: token },
-          });
+          const res = await axios.get(
+            `https://ecommerceapiiii.herokuapp.com/api/v1/auth`,
+            {
+              headers: { Authorization: token },
+            }
+          );
           setIsLogged(true);
           res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false);
           setCart(res.data.cart);
@@ -31,7 +34,7 @@ const UserApi = (token) => {
   //   if (token) {
   //     const getHistory = async () => {
   //       if (isAdmin) {
-  //         const res = await axios.get("/api/v1/history", {
+  //         const res = await axios.get("https://ecommerceapiiii.herokuapp.com/api/v1/history", {
   //           headers: { Authorization: token },
   //         });
   //         setHistory(res.data);

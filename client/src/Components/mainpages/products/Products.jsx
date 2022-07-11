@@ -20,20 +20,24 @@ const Products = () => {
   const [isCheck, setIsCheck] = useState(false);
   const [check, setCheck] = useState(false);
 
+  // const h = "https://ecommerceapiiii.herokuapp.com";
   const deleteProduct = async (id, public_id) => {
     try {
       setLoading(true);
 
       const destroyImg = axios.post(
-        "/api/v1/upload/destroy",
+        `https://ecommerceapiiii.herokuapp.com/api/v1/upload/destroy`,
         { public_id },
         {
           headers: { Authorization: token },
         }
       );
-      const deleteProduct = axios.delete(`/api/v1/products/${id}`, {
-        headers: { Authorization: token },
-      });
+      const deleteProduct = axios.delete(
+        `https://ecommerceapiiii.herokuapp.com/api/v1/products/${id}`,
+        {
+          headers: { Authorization: token },
+        }
+      );
 
       await destroyImg;
       await deleteProduct;

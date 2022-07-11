@@ -22,7 +22,7 @@ const Category = () => {
     try {
       if (onEdit) {
         const resp = await axios.put(
-          `/api/v1/category/${Id}`,
+          `https://ecommerceapiiii.herokuapp.com/api/v1/category/${Id}`,
           { name: categories },
           {
             headers: { Authorization: toke },
@@ -31,7 +31,7 @@ const Category = () => {
         alert(resp.data.msg);
       } else {
         const resp = await axios.post(
-          "/api/v1/category",
+          `https://ecommerceapiiii.herokuapp.com/api/v1/category`,
           { name: categories },
           {
             headers: { Authorization: toke },
@@ -49,9 +49,12 @@ const Category = () => {
 
   const deleteCategory = async (id) => {
     try {
-      const res = await axios.delete(`/api/v1/category/${id}`, {
-        headers: { Authorization: toke },
-      });
+      const res = await axios.delete(
+        `https://ecommerceapiiii.herokuapp.com/api/v1/category/${id}`,
+        {
+          headers: { Authorization: toke },
+        }
+      );
       alert(res.data.msg);
       setCB(!cb);
     } catch (err) {

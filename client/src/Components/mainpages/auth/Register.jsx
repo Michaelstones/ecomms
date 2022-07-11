@@ -17,7 +17,12 @@ const Register = () => {
   const regHandler = async (e) => {
     try {
       e.preventDefault();
-      await axios.post("api/v1/register", { ...user });
+      await axios.post(
+        `https://ecommerceapiiii.herokuapp.com/api/v1/register`,
+        {
+          ...user,
+        }
+      );
       localStorage.setItem("firstTimer", true);
       window.location.href = "/";
     } catch (error) {

@@ -1,6 +1,5 @@
 import BtnRender from "./BtnRender";
-import { useContext, useState } from "react";
-import axios from "axios";
+import { useContext } from "react";
 import { GlobalsState } from "./../../../GlobalsState";
 import Loading from "./Loading/Loading";
 

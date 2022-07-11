@@ -7,7 +7,9 @@ const CategoryApi = () => {
 
   useEffect(() => {
     const getCat = async () => {
-      const res = await axios.get("/api/v1/category");
+      const res = await axios.get(
+        `https://ecommerceapiiii.herokuapp.com//api/v1/category`
+      );
       //   console.log(res);
       setCategory(res.data.categories);
     };

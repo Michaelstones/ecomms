@@ -67,12 +67,16 @@ const Createproduct = () => {
       formData.append("file", file);
 
       setLoading(true);
-      const res = await axios.post("/api/v1/upload", formData, {
-        headers: {
-          "content-type": "multipart/form-data",
-          Authorization: token,
-        },
-      });
+      const res = await axios.post(
+        `https://ecommerceapiiii.herokuapp.com/api/v1/upload`,
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: token,
+          },
+        }
+      );
       setLoading(false);
       setImages(res.data);
     } catch (err) {
@@ -84,7 +88,7 @@ const Createproduct = () => {
       if (!isAdmin) return alert("You're not an admin");
       setLoading(true);
       await axios.post(
-        "/api/v1/upload/destroy",
+        `https://ecommerceapiiii.herokuapp.com/api/v1/upload/destroy`,
         { public_id: images.public_id },
         {
           headers: { Authorization: token },

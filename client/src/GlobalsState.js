@@ -13,7 +13,9 @@ export const DataProvider = ({ children }) => {
     const first = localStorage.getItem("firstTimer");
     if (first) {
       const refreshToken = async () => {
-        const res = await axios.get("/api/v1/refresh_token");
+        const res = await axios.get(
+          `https://ecommerceapiiii.herokuapp.com/api/v1/refresh_token`
+        );
         setToken(res.data.accesstoken);
       };
       setTimeout(() => {

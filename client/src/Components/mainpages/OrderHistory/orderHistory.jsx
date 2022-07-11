@@ -18,14 +18,20 @@ const OrderHistory = () => {
     if (token) {
       const getHistory = async () => {
         if (admin) {
-          const res = await axios.get("/api/v1/history", {
-            headers: { Authorization: token },
-          });
+          const res = await axios.get(
+            `https://ecommerceapiiii.herokuapp.com/api/v1/history`,
+            {
+              headers: { Authorization: token },
+            }
+          );
           setHistory(res.data);
         } else {
-          const res = await axios.get("/api/v1/history", {
-            headers: { Authorization: token },
-          });
+          const res = await axios.get(
+            `https://ecommerceapiiii.herokuapp.com/api/v1/history`,
+            {
+              headers: { Authorization: token },
+            }
+          );
           setHistory(res.data);
         }
       };
